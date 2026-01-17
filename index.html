@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MBTI별 빌런 잠재력 테스트! 10개 질문으로 알아보는 당신 안의 숨겨진 빌런 유형.">
+    <meta name="keywords" content="MBTI, 빌런테스트, 심리테스트, 성격테스트, 다크사이드, 빌런잠재력">
+    <meta name="author" content="빌런테스트">
+    <meta property="og:title" content="MBTI별 빌런 잠재력 테스트 🦹">
+    <meta property="og:description" content="당신 안의 숨겨진 빌런은? 10개 질문으로 알아보자!">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>MBTI별 빌런 잠재력 테스트 🦹 | 나의 빌런 유형은?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6584899015936237" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">🦹 빌런테스트</a>
+            <div class="nav-links">
+                <a href="about.html">소개</a>
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="terms.html">이용약관</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ad-container">광고 영역</div>
+
+    <div class="bg-deco">
+        <div class="lightning">⚡</div>
+        <div class="lightning">⚡</div>
+        <div class="skull">💀</div>
+        <div class="skull">💀</div>
+        <div class="star">✦</div>
+        <div class="star">✦</div>
+        <div class="star">✦</div>
+    </div>
+
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <div class="start-card">
+                <div class="title-badge">SECRET TEST</div>
+                <div class="title-emoji">🦹</div>
+                <h1 class="title">MBTI별<br>빌런 잠재력</h1>
+                <p class="subtitle">당신 안에 숨겨진 빌런은<br>어떤 유형일까? 😈</p>
+                <button class="start-btn" onclick="startTest()">테스트 시작 →</button>
+            </div>
+            <div class="intro-section">
+                <h2>🔍 이 테스트는?</h2>
+                <p>평소엔 착하고 선량한 당신! 하지만 누구나 마음 한 켠에 빌런이 살고 있죠. MBTI 기반으로 당신의 숨겨진 빌런 유형을 알아봐요. (재미로만 봐주세요!)</p>
+                <h2>🦹 16가지 빌런 유형</h2>
+                <ul>
+                    <li>🧠 마스터마인드 빌런 (INTJ)</li>
+                    <li>🔬 매드사이언티스트 빌런 (INTP)</li>
+                    <li>👔 CEO 빌런 (ENTJ)</li>
+                    <li>🃏 카오스 빌런 (ENTP)</li>
+                    <li>🎭 이중생활 빌런 (INFJ)</li>
+                    <li>📓 복수노트 빌런 (INFP)</li>
+                    <li>... 그 외 10가지 더!</li>
+                </ul>
+                <h2>⏱️ 소요시간</h2>
+                <p>약 3분 (10개 질문)</p>
+            </div>
+        </div>
+
+        <div id="question-screen" class="screen">
+            <div class="question-card">
+                <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+                <div class="question-number" id="q-number">Q1 / 10</div>
+                <div class="question-text" id="q-text"></div>
+                <div class="options" id="options"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <div class="result-badge" id="result-mbti">INTJ</div>
+                <div class="result-emoji" id="result-emoji">🧠</div>
+                <div class="result-type" id="result-type">마스터마인드 빌런</div>
+                <div class="result-tagline" id="result-tagline">"이미 3년 뒤까지 계획함"</div>
+                <div class="result-desc" id="result-desc"></div>
+                <div class="result-trigger">
+                    <div class="trigger-title">💀 빌런 각성 포인트</div>
+                    <div class="trigger-text" id="result-trigger"></div>
+                </div>
+                <div class="share-section">
+                    <div class="share-title">친구한테 공유하기</div>
+                    <div class="share-buttons">
+                        <button class="share-btn kakao" onclick="shareKakao()">카카오톡</button>
+                        <button class="share-btn twitter" onclick="shareTwitter()">트위터</button>
+                        <button class="share-btn copy" onclick="copyLink()">링크복사</button>
+                    </div>
+                </div>
+                <button class="retry-btn" onclick="restartTest()">다시 테스트하기 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">광고 영역</div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h3>🦹 빌런테스트</h3>
+                    <p>당신 안의 숨겨진 빌런을<br>재미로 알아보는 테스트!</p>
+                </div>
+                <div class="footer-section">
+                    <h3>안내</h3>
+                    <p>본 테스트는 재미 목적으로 제작되었습니다. 실제 MBTI 검사와 무관합니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>문의</h3>
+                    <a href="mailto:rnu301@gmail.com">rnu301@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 빌런테스트. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">개인정보처리방침</a>
+                    <a href="terms.html">이용약관</a>
+                    <a href="about.html">서비스 소개</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
